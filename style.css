@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+.container h5{
+    color:rgb(3, 200, 32);
+    position: relative;
+    top:-100px;
+}
+#currentPlayer{
+    font-size: 20px;
+    position:relative;
+    top:-60px;
+}
+.players {
+    display: flex;
+    justify-content: space-between;
+}
+
+.player {
+    
+    padding: 20px;
+    margin: 10px;
+    max-width: 150px;
+}
+#player1 h2{
+    position: relative;
+    left:-150px;
+    top:-80px;
+}
+#player2 h2{
+    position: relative;
+    left:150px;
+    top:-80px;
+}
+#score1{
+    position: relative;
+    left:-150px;
+    top:-40px;
+
+}
+#score2{
+    position: relative;
+    left:150px;
+    top:-40px;
+
+}
+#rollButton1{
+    position: relative;
+    left:-150px;
+    top:-40px;
+}
+#rollButton2{
+    position: relative;
+    left:150px;
+    top:-40px;
+}
+button[disabled] {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+#diceImage{
+    width:140px;
+}
+.score {
+    display: flex;
+    align-items: center;
+}
+
+.score span {
+    margin-right: 10px;
+}
+button {
+    background-color: #4CAF50; /* Set initial background color to green */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+button:disabled {
+    background-color: #ccc; /* Change color when button is disabled */
+    cursor: not-allowed;
+}
+#resetButton {
+    background-color: #E91E63; /* Set background color to pink */
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+#resetButton:disabled {
+    background-color: #ccc; /* Change color when button is disabled */
+    cursor: not-allowed;
+}
+
