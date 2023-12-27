@@ -1,4 +1,4 @@
-let currentPlayer = 1;
+let currentPlayerNumber = 1; 
 let score1 = 0;
 let score2 = 0;
 let gameFinished = false;
@@ -10,22 +10,22 @@ function rollDice(player) {
     const rollButton2 = document.getElementById('rollButton2');
     const diceImage = document.getElementById('diceImage');
 
-    if (player === currentPlayer) {
+    if (player === currentPlayerNumber) {
         const diceValue = Math.floor(Math.random() * 6) + 1;
-        const currentPlayerScore = document.getElementById(`score${currentPlayer}`);
-        const currentPlayerScoreValue = currentPlayer === 1 ? score1 : score2;
+        const currentPlayerScore = document.getElementById(`score${currentPlayerNumber}`);
+        const currentPlayerScoreValue = currentPlayerNumber === 1 ? score1 : score2;
         currentPlayerScore.textContent = currentPlayerScoreValue + diceValue;
 
         diceImage.src = `images/dice-${diceValue}.png`;
 
-        if (currentPlayer === 1) {
+        if (currentPlayerNumber === 1) {
             score1 += diceValue;
-            currentPlayer = 2;
+            currentPlayerNumber = 2;
             rollButton1.disabled = true;
             rollButton2.disabled = false;
         } else {
             score2 += diceValue;
-            currentPlayer = 1;
+            currentPlayerNumber = 1;
             rollButton1.disabled = false;
             rollButton2.disabled = true;
         }
@@ -33,15 +33,17 @@ function rollDice(player) {
         if (score1 >= 30 || score2 >= 30) {
             gameFinished = true;
             document.getElementById('resetButton').disabled = false;
+            const winnerText = document.getElementById('winner');
+            winnerText.textContent = `Player ${score1 >= 30 ? 1 : 2} wins!`;
         }
 
         const currentPlayerText = document.getElementById('currentPlayer');
-        currentPlayerText.textContent = `Player-${currentPlayer} to play`;
+        currentPlayerText.textContent = `Player-${currentPlayerNumber} to play`;
     }
 }
 
 function resetGame() {
-    currentPlayer = 1;
+    currentPlayerNumber = 1;
     score1 = 0;
     score2 = 0;
     gameFinished = false;
@@ -62,4 +64,7 @@ function resetGame() {
     currentPlayerText.textContent = `Player 1 to play`;
 
     document.getElementById('resetButton').disabled = true;
+
+    const winnerText = document.getElementById('winner');
+    winnerText.textContent = ''; // Reset the winner text
 }
