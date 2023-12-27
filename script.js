@@ -1,4 +1,4 @@
-let currentPlayerNumber = 1; 
+let currentPlayerNumber = 1;
 let score1 = 0;
 let score2 = 0;
 let gameFinished = false;
@@ -33,12 +33,12 @@ function rollDice(player) {
         if (score1 >= 30 || score2 >= 30) {
             gameFinished = true;
             document.getElementById('resetButton').disabled = false;
-            const winnerText = document.getElementById('winner');
-            winnerText.textContent = `Player ${score1 >= 30 ? 1 : 2} wins!`;
+            const winnerText = document.getElementById('winnerMessage');
+            winnerText.textContent = `Player ${score1 >= 30 ? 1 : 2} wins!`; 
         }
 
         const currentPlayerText = document.getElementById('currentPlayer');
-        currentPlayerText.textContent = `Player-${currentPlayerNumber} to play`;
+        currentPlayerText.textContent = `Player ${currentPlayerNumber} to play`;
     }
 }
 
@@ -65,6 +65,6 @@ function resetGame() {
 
     document.getElementById('resetButton').disabled = true;
 
-    const winnerText = document.getElementById('winner');
-    winnerText.textContent = ''; // Reset the winner text
+    const winnerText = document.getElementById('winnerMessage');
+    winnerText.textContent = ''; 
 }
